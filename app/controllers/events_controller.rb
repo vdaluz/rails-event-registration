@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
+  skip_authorize_resource only: %i[ index show ]
 
   # GET /events or /events.json
   def index
